@@ -84,7 +84,7 @@ app.post('/send-welcome-email', async (req, res) => {
 
                 <!-- Button -->
                 <div style="text-align:center; margin:30px 0;">
-                  <a href="https://kathirvelan19.github.io/loginpage/dashboard"
+                  <a href="https://loginpage-1jlc.onrender.com/dashboard"
                      style="background:#2563eb; color:#ffffff; text-decoration:none; padding:14px 28px; border-radius:8px; font-size:15px; font-weight:600; display:inline-block;">
                     Go to Dashboard →
                   </a>
