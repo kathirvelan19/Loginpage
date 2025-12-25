@@ -57,7 +57,7 @@ const Signup: React.FC = () => {
 
       // Send welcome email
       try {
-        const emailResponse = await fetch('https://kathirvelan19.github.io/loginpage/send-welcome-email', {
+        const emailResponse = await fetch('https://loginpage-1jlc.onrender.com/send-welcome-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
