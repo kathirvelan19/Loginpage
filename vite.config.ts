@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       host: '0.0.0.0',
 
-      // ✅ ADD THIS
-      allowedHosts: 'all'
+      // ✅ Allow only Render host
+      allowedHosts: ['loginpage-1jlc.onrender.com']
     },
 
     plugins: [react()],
