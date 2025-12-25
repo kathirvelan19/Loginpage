@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       return;
     }
     try {
-      const response = await fetch('https://kathirvelan19.github.io/loginpage/notify-login', {
+      const response = await fetch('https://loginpage-1jlc.onrender.com/notify-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ toEmail: userEmail, userName }),
