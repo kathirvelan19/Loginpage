@@ -27,7 +27,7 @@ const Login: React.FC = () => {
     try {
       // Correct the URL if your backend is deployed to a different path on Vercel
       // For example, if you moved server.js to api/notify-login.js, the path would be '/api/notify-login'
-      const response = await fetch('https://loginpage-beta-beige.vercel.app/notify-login', {
+     const response = await fetch('/api/notify-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ toEmail: userEmail, userName }),
