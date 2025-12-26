@@ -1,11 +1,14 @@
-// backend/server.js
-require('dotenv').config();
+// api/index.js
+require('dotenv').config(); // Still needed for local development
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app = express(); // Initialize Express app
+
+// IMPORTANT: For Vercel serverless functions, you might not need an explicit PORT.
+// Vercel manages the listener.
+// const PORT = process.env.PORT || 5000; // Remove or comment out this line if not used
 
 app.use(cors());
 app.use(express.json());
@@ -28,6 +31,7 @@ transporter.verify((error, success) => {
   }
 });
 
+// Your /send-welcome-email endpoint
 app.post('/send-welcome-email', async (req, res) => {
   const { toEmail, userName } = req.body;
 
@@ -132,6 +136,7 @@ app.post('/send-welcome-email', async (req, res) => {
   }
 });
 
+// Your /notify-login endpoint
 app.post('/notify-login', async (req, res) => {
   const { toEmail, userName } = req.body;
 
@@ -241,6 +246,10 @@ app.post('/notify-login', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
-});
+// IMPORTANT: Export the app instance for Vercel to use as a serverless function
+module.exports = app;
+
+// Remove or comment out app.listen() as Vercel handles this
+// app.listen(PORT, () => {
+//   console.log(`Backend server running on port ${PORT}`);
+// });
