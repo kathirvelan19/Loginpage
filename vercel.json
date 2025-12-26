@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "backend/server.js": {
+      "runtime": "nodejs18.x"  // Specify the Node.js runtime. 
+                               // Node.js 18.x is a good current choice.
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",  // Any request starting with /api/
+      "destination": "/backend/server.js" // Will be routed to your backend/server.js
+    }
+  ]
+}
