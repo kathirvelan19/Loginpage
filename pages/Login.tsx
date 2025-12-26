@@ -25,6 +25,8 @@ const Login: React.FC = () => {
       return;
     }
     try {
+      // Correct the URL if your backend is deployed to a different path on Vercel
+      // For example, if you moved server.js to api/notify-login.js, the path would be '/api/notify-login'
       const response = await fetch('https://loginpage-beta-beige.vercel.app/notify-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -62,7 +64,7 @@ const Login: React.FC = () => {
       console.error('Login: Email/Password login error:', err.code, err.message);
       if (err.code === 'auth/invalid-email' || err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
         setError('Invalid email or password.');
-      } else if (err.code === 'auth/too-many-requests') {http://
+      } else if (err.code === 'auth/too-many-requests') {
         setError('Too many failed login attempts. Please try again later.');
       }
       else {
